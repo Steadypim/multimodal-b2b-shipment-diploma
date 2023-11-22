@@ -1,4 +1,4 @@
-package dev.steadypim.multimodalb2bshipmentdiploma.service.entity;
+package dev.steadypim.multimodalb2bshipmentdiploma.transportationservice.entity;
 
 import dev.steadypim.multimodalb2bshipmentdiploma.general.BaseEntity;
 import dev.steadypim.multimodalb2bshipmentdiploma.request.entity.Request;
@@ -20,7 +20,7 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = PRIVATE)
-public class Service extends BaseEntity {
+public class TransportationService extends BaseEntity {
     @OneToOne(fetch = EAGER)
     @JoinColumn(name = "request_id", referencedColumnName = "id", updatable = false, insertable = false, nullable = false)
     Request request;

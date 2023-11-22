@@ -1,7 +1,7 @@
 package dev.steadypim.multimodalb2bshipmentdiploma.shipments.shipment.entity;
 
 import dev.steadypim.multimodalb2bshipmentdiploma.general.BaseEntity;
-import dev.steadypim.multimodalb2bshipmentdiploma.service.entity.Service;
+import dev.steadypim.multimodalb2bshipmentdiploma.transportationservice.entity.TransportationService;
 import dev.steadypim.multimodalb2bshipmentdiploma.shipments.enums.ShipmentStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,8 +23,8 @@ import static lombok.AccessLevel.PRIVATE;
 @FieldDefaults(level = PRIVATE)
 public class Shipment extends BaseEntity {
     @OneToOne(fetch = EAGER)
-    @JoinColumn(name = "service_id", referencedColumnName = "id", nullable = false, updatable = false, insertable = false)
-    Service service;
+    @JoinColumn(name = "transportation_service_id", referencedColumnName = "id", nullable = false, updatable = false, insertable = false)
+    TransportationService transportationService;
 
     @Column(name = "departure_date")
     OffsetDateTime departureDate;
